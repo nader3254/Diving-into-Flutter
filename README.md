@@ -2,6 +2,10 @@
 this is my baisic flutter projects labs for studying only
 
 ## Travelling App 
-![REVIEW!](travelling\ app/screenshot/rev.mp4)
-![review2!](travelling\ app/screenshot/s0.jpg) 
-![review3!](travelling\ app/screenshot/s1.jpg) 
+
+![s0](https://user-images.githubusercontent.com/77461625/216748703-1256e8a3-cec8-4b91-a51d-86cdd3b0e4af.jpg)
+![s1](https://user-images.githubusercontent.com/77461625/216748711-67cbde60-dd82-407a-8548-c80009b4dba5.jpg)
+
+
+https://user-images.githubusercontent.com/77461625/216748829-50e8b02f-7aa2-42c6-b354-c2dfee5e7339.mp4
+
