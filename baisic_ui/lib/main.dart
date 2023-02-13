@@ -1,5 +1,6 @@
+import 'package:MybaisicUI/pages/introPage.dart';
 import 'package:flutter/material.dart';
-import 'pages/introPage.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -13,12 +14,9 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData.dark(
-
-      ),
-      home: MyIntroPage(),
+      theme: ThemeData.dark(),
+      //home: MyIntroPage(),
+      home: const MyIntroPage(),
     );
-
   }
 }
-

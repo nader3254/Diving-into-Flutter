@@ -1,3 +1,4 @@
+import 'package:MybaisicUI/pages/loginPage.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 
@@ -90,10 +91,17 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
 
   Widget SkipButton() {
     return Container(
-      margin: EdgeInsets.only(top: 20),
+      margin: EdgeInsets.only(top: 5),
       alignment: Alignment.bottomRight,
       child: TextButton(
-        onPressed: () => print('Skip'),
+        onPressed: () => {
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (_) => const MyLoginPage(),
+            ),
+          )
+        },
         child:
             Text("skip", style: TextStyle(color: Colors.white, fontSize: 18)),
       ),
@@ -121,7 +129,9 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
     Page page3 = Page(p3_img, p3_txt, p3_txt1);
 
     return Container(
-      height: 420.0,
+      //margin: EdgeInsets.only(bottom: 20),
+      //alignment: Alignment.bottomCenter,
+      height: 500,
       child: PageView(
         controller: _pageController,
         onPageChanged: (int index) {
@@ -129,10 +139,18 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
 
           setState(() {
             currentPageView = index;
+            if (index == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => const MyLoginPage(),
+                ),
+              );
+            }
           });
         },
         physics: ClampingScrollPhysics(),
-        children: [page1, page2, page3],
+        children: [page1, page2, page3, page1],
       ),
     );
   }
@@ -194,7 +212,8 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
           onPressed: () {
             lastIndex++;
             _pageController.animateToPage(lastIndex,
-                duration: Duration(milliseconds: 500), curve: Curves.ease);
+                duration: const Duration(milliseconds: 500),
+                curve: Curves.ease);
           },
           child: const Text(
             'Next',
@@ -205,7 +224,7 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
           ),
         ),
         SizedBox(width: 10.0),
-        Icon(
+        const Icon(
           Icons.arrow_forward,
           color: Colors.white,
           size: 30.0,
@@ -217,27 +236,40 @@ class _MyStatefulWidgetState extends State<MyIntroPage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        body: AnnotatedRegion<SystemUiOverlayStyle>(
-      value:
-          SystemUiOverlayStyle.light, //for making the system bar dark or light
-      child: Container(
-        decoration: MainContainerStyling(), //background for application
-        child: Column(
-          children: <Widget>[
-            SkipButton(),
-            PageViewWidget(),
-            Container(
-              margin: EdgeInsets.only(top: 5),
-              child: PageViewIndicator(),
-            ),
-            Container(
-              margin: EdgeInsets.only(top: 20),
-              //alignment: Alignment.bottomCenter,
-              child: NextButton(),
-            )
-          ],
+      body: AnnotatedRegion<SystemUiOverlayStyle>(
+        value: SystemUiOverlayStyle
+            .light, //for making the system bar dark or light
+        child: SingleChildScrollView(
+          physics: const AlwaysScrollableScrollPhysics(),
+          // padding: const EdgeInsets.symmetric(
+          //   horizontal: 50.0,
+          //   vertical: 50.0,
+          // ),
+          child: Stack(
+            children: <Widget>[
+              Container(
+                margin: EdgeInsets.all(1),
+                decoration: MainContainerStyling(), //background for application
+                child: Column(
+                  children: <Widget>[
+                    SkipButton(),
+                    PageViewWidget(),
+                    Container(
+                      margin: const EdgeInsets.only(top: 5),
+                      child: PageViewIndicator(),
+                    ),
+                    Container(
+                      margin: const EdgeInsets.only(top: 80),
+                      //alignment: Alignment.bottomCenter,
+                      child: NextButton(),
+                    )
+                  ],
+                ),
+              ),
+            ],
+          ),
         ),
       ),
-    ));
+    );
   }
 }

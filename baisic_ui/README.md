@@ -1,16 +1,10 @@
-# untitled4
+# Diving-into-Flutter
+this is my baisic flutter projects labs for studying only
 
-A new Flutter project.
+## Travelling App 
 
-## Getting Started
+<img src="https://user-images.githubusercontent.com/77461625/216748992-fc9ff769-4590-485e-a6e9-da4d8e1bda6b.jpg" width="200" height="400">
+<img src="https://user-images.githubusercontent.com/77461625/216748711-67cbde60-dd82-407a-8548-c80009b4dba5.jpg" width="200" height="400">
 
-This project is a starting point for a Flutter application.
+https://user-images.githubusercontent.com/77461625/216748829-50e8b02f-7aa2-42c6-b354-c2dfee5e7339.mp4
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
